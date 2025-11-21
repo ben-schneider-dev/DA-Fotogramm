@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    scroll-behavior: smooth;
+    /* Aqua
+    --primary1: #003846;
+    --pimary2:#07575D;
+    --secondary1:#66A5AD;
+    --secondary2:#C4DFE6;*/
+
+    /* BlueBarry */
+    --primary1: #1E1F26;
+    --pimary2:#283655;
+    --secondary1:#4D648D;
+    --secondary2:#D0E1F9;
+    --akzent:#A10115;
+
+    background-color: var(--primary1);
+}
+header{
+    height: 130px;
+    width: 100%;
+    background-color: var(--pimary2);
+    /*background-image: url(assets/logo/Fotogram_Logo.svg);*/
+    display: flex;
+    align-items: center;
+    img{
+        height: 60px;
+        margin-left: 10%;
+    }
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    font-size: 50px;
+    color: var(--secondary2);
+}
+footer{
+    height: 130px;
+    width: 100%;
+    background-color: var(--pimary2);
+    position: absolute;
+    bottom: 0;
+}
