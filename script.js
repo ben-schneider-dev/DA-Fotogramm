@@ -12,3 +12,7 @@ const bilder = [
     "pic_11.jpg" ,
     "pic_12.jpg" ,
 ];
+
+function galerieRendern() {
+    const galerieDiv = document.getElementById("galerie");
+}
