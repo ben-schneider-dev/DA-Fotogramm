@@ -116,3 +116,38 @@ footer{
 .versteckt{
     display: none !important;
 }
+#btn-schliessen {
+    position: absolute;
+    top: 93%;
+    left: 47%;
+    z-index: 102;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+#btn-zurueck {
+    position: absolute;
+    left: 30px;
+    top: 90%;
+    transform: translate(-50%);
+    z-index: 102;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+}
+#btn-weiter {
+    position: absolute;
+    right: -40px;
+    top: 90%;
+    transform: translate(-50%);
+    z-index: 102;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+}
