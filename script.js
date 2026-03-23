@@ -35,6 +35,24 @@ function modalSchliessen(){
     modal.classList.add("versteckt");
 }
 
+function bildWeiter() {
+    if (aktuellerIndex < bilder.length - 1) {
+        aktuellerIndex = aktuellerIndex + 1;
+    } else{
+        aktuellerIndex = 0;
+    }
+    modalOeffnen(aktuellerIndex);
+}
+
+function bildZurueck() {
+    if (aktuellerIndex > 0) {
+        aktuellerIndex = aktuellerIndex - 1;
+    } else {
+        aktuellerIndex = bilder.length - 1;
+    }
+    modalOeffnen(aktuellerIndex);
+}
+
 function galerieRendern() {
     const galerieDiv = document.getElementById("galerie");
 
@@ -61,6 +79,14 @@ galerieRendern();
 
 document.getElementById("btn-schliessen").addEventListener("click", function() {
     modalSchliessen();
+});
+
+document.getElementById("btn-weiter").addEventListener("click", function() {
+    bildWeiter();
+});
+
+document.getElementById("btn-zurueck").addEventListener("click", function() {
+    bildZurueck();
 });
 
 document.getElementById("modal-hintergrund").addEventListener("click", function() {
