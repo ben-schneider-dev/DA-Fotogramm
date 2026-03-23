@@ -92,3 +92,18 @@ document.getElementById("btn-zurueck").addEventListener("click", function() {
 document.getElementById("modal-hintergrund").addEventListener("click", function() {
     modalSchliessen();
 });
+
+document.addEventListener("keydown", function(event) {
+    if (modalIstOffen === false) {
+        return;
+    }
+    if (event.key === "ArrowRight") {
+        bildWeiter();
+    }
+    if (event.key === "ArrowLeft") {
+        bildZurueck();
+    }
+    if (event.key === "Escape") {
+        modalSchliessen();
+    }
+});
