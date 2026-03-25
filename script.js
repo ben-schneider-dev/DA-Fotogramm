@@ -56,42 +56,34 @@ function previousImage() {
 function renderGallery() {
     const galleryDiv = document.getElementById("gallery");
 
-    images.forEach(function(filename, index) {
+    for (let i = 0; i < images.length; i++) {
         const imageFrame = document.createElement("div");
         imageFrame.classList.add("thumbnail");
        
         imageFrame.addEventListener("click", function() {
-            openModal(index);
+            openModal(i);
         });
 
         const imgElement = document.createElement("img");
-        imgElement.src = "assets/img/" + filename;
-        imgElement.alt = "Foto " + (index + 1);
+        imgElement.src = "assets/img/" + images[i];
+        imgElement.alt = "Foto " + (i + 1);
 
         imageFrame.appendChild(imgElement);
         galleryDiv.appendChild(imageFrame);
 
 
-    });
+    }
     
 }
 renderGallery();
 
-document.getElementById("btn-close").addEventListener("click", function() {
-    closeModal();
-});
+document.getElementById("btn-close").addEventListener("click", closeModal);
 
-document.getElementById("btn-next").addEventListener("click", function() {
-    nextImage();
-});
+document.getElementById("btn-next").addEventListener("click", nextImage);
 
-document.getElementById("btn-back").addEventListener("click", function() {
-    previousImage();
-});
+document.getElementById("btn-back").addEventListener("click", previousImage);
 
-document.getElementById("modal-background").addEventListener("click", function() {
-    closeModal();
-});
+document.getElementById("modal-background").addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function(event) {
     if (modalIsOpen === false) {
