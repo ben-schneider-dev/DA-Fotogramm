@@ -66,7 +66,7 @@ function galerieRendern() {
 
         const imgElement = document.createElement("img");
         imgElement.src = "assets/img/" + dateiname;
-        imgElement.alt = "Foto" + (index + 1);
+        imgElement.alt = "Foto " + (index + 1);
 
         bildRahmen.appendChild(imgElement);
         galerieDiv.appendChild(bildRahmen);

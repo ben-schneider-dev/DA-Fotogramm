@@ -10,35 +10,33 @@
 <body>
 
 <header>
-    <div><img src="assets/logo/Fotogram_Logo.svg" alt="Fotogram_Logo"></div>
+    <div><img src="assets/logo/Fotogram_Logo.svg" alt="Fotogram Logo"></div>
 </header>
 
-<h1>Mein persöhnliches DA Fotoalbum</h1>
-
 <main>
+    <h1>Mein Projekt Fotoalbum</h1>
+
     <section>
         <div id="galerie"></div>
     </section>
 </main>
 
-    
-    
-    <footer>
-        <div class="footer-content">
-            <img src="assets/img/developer-akademie.png" alt="Developer Akademie Logo">
-            <p>Developer Akademie GmbH</p>
-        </div>
-    </footer>
-
-<div id="modal" class="versteckt">
+<div id="modal" class="versteckt" role="dialog" aria-modal="true" aria-label="Bildansicht">
     <div id="modal-hintergrund"></div>
     <div id="modal-inhalt">
         <img  id="modal-bild" src="" alt="Großansicht">
-        <button id="btn-schliessen">&#8855;</button>
-        <button id="btn-zurueck">&#8592;</button>
-        <button id="btn-weiter">&#8594;</button>
+        <button id="btn-schliessen" aria-label ="Bild schließen">&#8855;</button>
+        <button id="btn-zurueck" aria-label ="Vorheriges Bild">&#8592;</button>
+        <button id="btn-weiter" aria-label ="Nächstes Bild">&#8594;</button>
     </div>
 </div>
+
+<footer>
+    <div class="footer-content">
+        <img src="assets/img/developer-akademie.png" alt="Developer Akademie Logo">
+        <p>Developer Akademie GmbH</p>
+    </div>
+</footer>
 
 <script src="script.js"></script>
 </body>

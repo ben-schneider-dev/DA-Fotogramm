@@ -21,7 +21,7 @@ body{
 header{
     height: 130px;
     width: 100%;
-    background-color: var(--pimary2);
+    background-color: var(--secondary1);
     /*background-image: url(assets/logo/Fotogram_Logo.svg);*/
     display: flex;
     align-items: center;
@@ -77,9 +77,21 @@ h1{
 footer{
     height: 130px;
     width: 100%;
-    background-color: var(--pimary2);
-    position: absolute;
-    bottom: 0;
+    background-color: var(--secondary1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    margin: 2%;
+}
+.footer-content img {
+    height: 50px;
 }
 #modal{
     position: fixed;
@@ -150,4 +162,19 @@ footer{
     color: white;
     font-size: 60px;
     cursor: pointer;
+}
+@media (max-width: 550px) {
+    h1 {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 380px) {
+    header img {
+        height: 40px;
+        margin-left: 5%;
+    }
+    header {
+        height: 90px;
+    }
 }
