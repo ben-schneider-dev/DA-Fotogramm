@@ -1,5 +1,5 @@
 "use strict";
-const bilder = [
+const images = [
     "pic_1.jpg" ,
     "pic_2.jpg" ,
     "pic_3.jpg" ,
@@ -14,96 +14,96 @@ const bilder = [
     "pic_12.jpg" ,
 ];
 
-let aktuellerIndex = 0;
-let modalIstOffen = false;
+let currentIndex = 0;
+let modalIsOpen = false;
 
-function modalOeffnen(index) {
-    aktuellerIndex = index;
-    modalIstOffen = true;
+function openModal(index) {
+    currentIndex = index;
+    modalIsOpen = true;
 
     const modal = document.getElementById("modal");
-    const modalBild = document.getElementById("modal-bild");
+    const modalImage = document.getElementById("modal-image");
 
-    modalBild.src ="assets/img/" + bilder[aktuellerIndex];
-    modal.classList.remove("versteckt");
+    modalImage.src ="assets/img/" + images[currentIndex];
+    modal.classList.remove("hide");
 }
 
-function modalSchliessen(){
-    modalIstOffen = false;
+function closeModal(){
+    modalIsOpen = false;
 
     const modal =document.getElementById("modal");
-    modal.classList.add("versteckt");
+    modal.classList.add("hide");
 }
 
-function bildWeiter() {
-    if (aktuellerIndex < bilder.length - 1) {
-        aktuellerIndex = aktuellerIndex + 1;
+function nextImage() {
+    if (currentIndex < images.length - 1) {
+        currentIndex = currentIndex + 1;
     } else{
-        aktuellerIndex = 0;
+        currentIndex = 0;
     }
-    modalOeffnen(aktuellerIndex);
+    openModal(currentIndex);
 }
 
-function bildZurueck() {
-    if (aktuellerIndex > 0) {
-        aktuellerIndex = aktuellerIndex - 1;
+function previousImage() {
+    if (currentIndex > 0) {
+        currentIndex = currentIndex - 1;
     } else {
-        aktuellerIndex = bilder.length - 1;
+        currentIndex = images.length - 1;
     }
-    modalOeffnen(aktuellerIndex);
+    openModal(currentIndex);
 }
 
-function galerieRendern() {
-    const galerieDiv = document.getElementById("galerie");
+function renderGallery() {
+    const galleryDiv = document.getElementById("gallery");
 
-    bilder.forEach(function(dateiname, index) {
-        const bildRahmen = document.createElement("div");
-        bildRahmen.classList.add("thumbnail");
+    images.forEach(function(filename, index) {
+        const imageFrame = document.createElement("div");
+        imageFrame.classList.add("thumbnail");
        
-        bildRahmen.addEventListener("click", function() {
-            modalOeffnen(index);
+        imageFrame.addEventListener("click", function() {
+            openModal(index);
         });
 
         const imgElement = document.createElement("img");
-        imgElement.src = "assets/img/" + dateiname;
+        imgElement.src = "assets/img/" + filename;
         imgElement.alt = "Foto " + (index + 1);
 
-        bildRahmen.appendChild(imgElement);
-        galerieDiv.appendChild(bildRahmen);
+        imageFrame.appendChild(imgElement);
+        galleryDiv.appendChild(imageFrame);
 
 
     });
     
 }
-galerieRendern();
+renderGallery();
 
-document.getElementById("btn-schliessen").addEventListener("click", function() {
-    modalSchliessen();
+document.getElementById("btn-close").addEventListener("click", function() {
+    closeModal();
 });
 
-document.getElementById("btn-weiter").addEventListener("click", function() {
-    bildWeiter();
+document.getElementById("btn-next").addEventListener("click", function() {
+    nextImage();
 });
 
-document.getElementById("btn-zurueck").addEventListener("click", function() {
-    bildZurueck();
+document.getElementById("btn-back").addEventListener("click", function() {
+    previousImage();
 });
 
-document.getElementById("modal-hintergrund").addEventListener("click", function() {
-    modalSchliessen();
+document.getElementById("modal-background").addEventListener("click", function() {
+    closeModal();
 });
 
 document.addEventListener("keydown", function(event) {
-    if (modalIstOffen === false) {
+    if (modalIsOpen === false) {
         return;
     }
     if (event.key === "ArrowRight") {
-        bildWeiter();
+        nextImage();
     }
     if (event.key === "ArrowLeft") {
-        bildZurueck();
+        previousImage();
     }
     if (event.key === "Escape") {
-        modalSchliessen();
+        closeModal();
     }
 });

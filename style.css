@@ -38,8 +38,8 @@ h1{
     font-size: 50px;
     color: var(--secondary2);
 }
-/* Galerie: Bilder nebeneinander in einem Raster */
-#galerie {
+/* gallery: Bilder nebeneinander in einem Raster */
+#gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -104,7 +104,7 @@ footer{
     justify-content: center;
     z-index: 100; 
 }
-#modal-hintergrund{
+#modal-background{
     position: absolute;
     top: 0;
     left: 0;
@@ -112,23 +112,23 @@ footer{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
 }
-#modal-inhalt{
+#modal-content{
     position: relative;
     z-index: 101;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#modal-bild{
+#modal-image{
     max-width: 80vw;
     max-height: 80vh;
     border-radius: 8px;
     object-fit: contain;
 }
-.versteckt{
+.hide{
     display: none !important;
 }
-#btn-schliessen {
+#btn-close {
     position: absolute;
     top: 93%;
     left: 47%;
@@ -139,7 +139,7 @@ footer{
     font-size: 40px;
     cursor: pointer;
 }
-#btn-zurueck {
+#btn-back {
     position: absolute;
     left: 30px;
     top: 90%;
@@ -151,7 +151,7 @@ footer{
     font-size: 60px;
     cursor: pointer;
 }
-#btn-weiter {
+#btn-next {
     position: absolute;
     right: -40px;
     top: 90%;
