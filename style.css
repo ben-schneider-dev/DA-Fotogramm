@@ -124,8 +124,9 @@ footer{
     position: relative;
     z-index: 101;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 16px;
 }
 #modal-image{
     max-width: 80vw;
@@ -136,41 +137,23 @@ footer{
 .hide{
     display: none !important;
 }
-#btn-close {
-    position: absolute;
-    top: 93%;
-    left: 47%;
-    z-index: 102;
+#modal-controls {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+#btn-back,
+#btn-close,
+#btn-next {
     background: none;
     border: none;
     color: white;
     font-size: 40px;
     cursor: pointer;
-}
-#btn-back {
-    position: absolute;
-    left: 30px;
-    top: 90%;
-    transform: translate(-50%);
     z-index: 102;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 60px;
-    cursor: pointer;
 }
-#btn-next {
-    position: absolute;
-    right: -40px;
-    top: 90%;
-    transform: translate(-50%);
-    z-index: 102;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 60px;
-    cursor: pointer;
-}
+
 @media (max-width: 550px) {
     h1 {
         font-size: 28px;
