@@ -153,7 +153,10 @@ footer{
     cursor: pointer;
     z-index: 102;
 }
-
+.thumbnail:focus {
+    outline: 3px solid var(--secondary2);
+    outline-offset: 3px;
+}
 @media (max-width: 550px) {
     h1 {
         font-size: 28px;

@@ -59,10 +59,16 @@ function renderGallery() {
     for (let i = 0; i < images.length; i++) {
         const imageFrame = document.createElement("div");
         imageFrame.classList.add("thumbnail");
+        imageFrame.setAttribute("tabindex", "0");
        
         imageFrame.addEventListener("click", function() {
             openModal(i);
         });
+        imageFrame.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                openModal(i);
+            }
+        })
 
         const imgElement = document.createElement("img");
         imgElement.src = "assets/img/" + images[i];
